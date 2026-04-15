@@ -10,8 +10,12 @@ import plotly.graph_objects as go
 import plotly.express as px
 from statsmodels.tsa.arima.model import ARIMA
 from sklearn.metrics import mean_absolute_error, mean_squared_error
+from pathlib import Path
 import warnings
 warnings.filterwarnings("ignore")
+
+# Resolve dataset path relative to this file — works locally and on Streamlit Cloud
+DATA_PATH = Path(__file__).parent / "Cleaned_Merged_Tea_Dataset.csv"
 
 # ──────────────────────────────────────────────
 # PAGE CONFIG
@@ -238,7 +242,7 @@ st.markdown(f"""
 # ──────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv("Cleaned_Merged_Tea_Dataset.csv", index_col=0, parse_dates=True)
+    df = pd.read_csv(DATA_PATH, index_col=0, parse_dates=True)
     df = df.sort_index()
     numeric_cols = [
         "Export Quantity (kg)", "Export Price (LKR/kg)",
