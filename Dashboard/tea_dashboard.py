@@ -23,7 +23,13 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import streamlit as st
 from statsmodels.tsa.arima.model import ARIMA
-from sklearn.metrics import mean_absolute_error, mean_squared_error
+
+# Pure NumPy metric helpers — no sklearn dependency
+def mean_absolute_error(y_true, y_pred):
+    return np.mean(np.abs(np.array(y_true) - np.array(y_pred)))
+
+def mean_squared_error(y_true, y_pred):
+    return np.mean((np.array(y_true) - np.array(y_pred)) ** 2)
 
 # ─────────────────────────────────────────────
 # PAGE CONFIG
