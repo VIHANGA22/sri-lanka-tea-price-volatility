@@ -9,4 +9,4 @@ xgboost>=2.0
 
 # Optional — enables the Prophet model in "Forecasting Models" and "Model Comparison".
 # The app runs fine without it (Prophet simply gets skipped with a notice).
-# prophet>=1.1
+prophet>=1.1
