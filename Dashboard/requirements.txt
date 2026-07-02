@@ -1,0 +1,12 @@
+streamlit>=1.30
+pandas>=2.0
+numpy>=1.24
+plotly>=5.18
+statsmodels>=0.14
+scikit-learn>=1.3
+scipy>=1.10
+xgboost>=2.0
+
+# Optional — enables the Prophet model in "Forecasting Models" and "Model Comparison".
+# The app runs fine without it (Prophet simply gets skipped with a notice).
+# prophet>=1.1
